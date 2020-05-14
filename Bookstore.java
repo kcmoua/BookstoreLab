@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.IOException;
 
 public class Bookstore {
     private String name, address, openToday, usedBooks;
@@ -13,9 +14,8 @@ public class Bookstore {
         setStoreSize(storeSize);
         setUsedBooks(usedBooks);
 
-        // titles = new ArrayList<>();
-        // loadTitles();
-        // setTitles(titles);
+        titles = new ArrayList<>();
+        loadTitles();
     }
 
     public String getName() {
@@ -71,6 +71,18 @@ public class Bookstore {
             this.usedBooks = "The library DOES have used books.";
         } else {
             this.usedBooks = "The library DOES NOT have used books.";
+        }
+    }
+
+    private void loadTitles() {
+        try {
+            Utils.loadStringsToArray(this.titles);
+        }
+        catch (IOException e) {
+            // for now simply init the array to zero
+            System.out.println("Could not initilize the titles");
+            // make sure it is empty
+            this.titles = new ArrayList<String>();
         }
     }
 }
