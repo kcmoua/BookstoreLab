@@ -1,5 +1,3 @@
-
-
 public class Main {
     public static void main(String[] args) {
         Bookstore store = new Bookstore("Barnes", "1234 Charlotte Road", true, 10, 1000, true);
@@ -11,7 +9,7 @@ public class Main {
         System.out.println(store.getOpenToday());
         System.out.println("What time does it close?");
         System.out.println(store.getCloseTime());
-        System.out.println("How big is the store?");
+        System.out.println("How big is the store (sq ft)?");
         System.out.println(store.getStoreSize());
         System.out.println("Does the store have used books?");
         System.out.println(store.getUsedBooks());

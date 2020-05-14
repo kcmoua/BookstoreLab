@@ -14,8 +14,9 @@ public class Bookstore {
         setStoreSize(storeSize);
         setUsedBooks(usedBooks);
 
-        titles = new ArrayList<>();
+        titles = new ArrayList<String>();
         loadTitles();
+        System.out.println(titles);
     }
 
     public String getName() {
@@ -39,7 +40,7 @@ public class Bookstore {
     }
 
     public void setOpenToday(boolean open) {
-        if(open == true) {
+        if (open == true) {
             this.openToday = "The store is open.";
         } else {
             this.openToday = "The store is closed.";
@@ -67,7 +68,7 @@ public class Bookstore {
     }
 
     public void setUsedBooks(boolean usedBooks) {
-        if(usedBooks == true) {
+        if (usedBooks == true) {
             this.usedBooks = "The library DOES have used books.";
         } else {
             this.usedBooks = "The library DOES NOT have used books.";
@@ -77,12 +78,12 @@ public class Bookstore {
     private void loadTitles() {
         try {
             Utils.loadStringsToArray(this.titles);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             // for now simply init the array to zero
             System.out.println("Could not initilize the titles");
             // make sure it is empty
             this.titles = new ArrayList<String>();
+
         }
     }
 }
